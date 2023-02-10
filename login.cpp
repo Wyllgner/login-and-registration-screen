@@ -3,11 +3,13 @@
 #include<stdlib.h>
 #define TF 20
 
+// Struct for login information
 struct system{	
 	char user[20];
 	char pass[20];
 };
 
+// Struct for regist information
 struct regist{
 	char name[20];
 	char lastname[20];
@@ -28,7 +30,7 @@ int login(struct regist client[TF], int tl){
     printf("\n\t\t\tPassword\n");
     printf("\t\t\t _______________\n");
     printf("\t\t\t  ");
-   	 scanf("%s", pass_temp);
+   		scanf("%s", pass_temp);
     printf("\t\t\t _______________\n");
     printf("\n\n\t\t\t1-Confirm   2-Exit");
     printf("\n\n\t\t\t    --> ");
@@ -75,7 +77,7 @@ void registration(struct regist client[TF], int &tl){
      			 printf("\n\n\t\t\t[User already exists]");  
      			 printf("\n\t\t\t[Try to login]\n");
      			 printf("\n\t\t\t1-Ok  ->");
-     			 scanf("%d",&ok);
+     			 	scanf("%d",&ok);
      		
   			}else{	
 				printf("\n\n\t\t\tSenha\n");
@@ -89,7 +91,7 @@ void registration(struct regist client[TF], int &tl){
 				FILE *arq = fopen("bank_for_login.txt","w");
 				for (i=0;i<tl;i++)
 				fprintf(arq,"\n%s %s %s %s \n",client[i].name,client[i].lastname,client[i].login.user,client[i].login.pass);
-				fclose(arq); 
+					fclose(arq); 
 			
 				system("cls");			
 				printf("\n\n\t\t\tRegistered Successfully!\n");
@@ -101,6 +103,7 @@ void registration(struct regist client[TF], int &tl){
 		}
 	}
 }
+
 int main(){
 	int i,tl=0,option=0,sequence;
 	struct regist client[TF];
@@ -158,5 +161,5 @@ int main(){
         printf("\n\t\t\t _______________\n");
 	}	
 		
-		return 0;		
+	return 0;		
 }
